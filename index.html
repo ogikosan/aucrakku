@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オークラック - 公式操作ガイド [2025年版]</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header-bg {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+        }
+        .section-title {
+            border-left: 5px solid #3498db;
+            padding-left: 1rem;
+        }
+        .important-notice {
+            border-left: 5px solid #e74c3c;
+        }
+        .step-card {
+            border-left: 4px solid #2ecc71;
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .tip-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #f39c12;
+        }
+        .image-container {
+            max-width: 100%;
+            margin: 1.5rem 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .feature-icon {
+            background-color: #3498db;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="page-container">
+        <!-- ヘッダーセクション -->
+        <header class="header-bg text-white p-6 rounded-lg shadow-lg mb-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold mb-2">オークラック</h1>
+                    <h2 class="text-xl">ヤフオク自動出品ツール 公式操作ガイド</h2>
+                </div>
+            </div>
+        </header>
+
+        <!-- 目次 -->
+        <div class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">目次</h2>
+            <nav class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="#intro" class="p-3 bg-gray-50 hover:bg-blue-50 rounded transition">1. はじめに - オークラックとは</a>
+                <a href="#requirements" class="p-3 bg-gray-50 hover:bg-blue-50 rounded transition">2. 必要なものと前提条件</a>
+                <a href="#preparation" class="p-3 bg-gray-50 hover:bg-blue-50 rounded transition">3. 準備：ツールを使う前に</a>
+                <a href="#usage" class="p-3 bg-gray-50 hover:bg-blue-50 rounded transition">4. ツールの使い方</a>
+                <a href="#troubleshooting" class="p-3 bg-gray-50 hover:bg-blue-50 rounded transition">5. トラブルシューティング</a>
+            </nav>
+        </div>
+
+        <!-- イントロセクション -->
+        <section id="intro" class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">1. はじめに - オークラックとは</h2>
+            
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-3">1.1. このツールでできること</h3>
+                <p class="mb-4">
+                    オークラックは、ヤフオクの出品作業を効率化するために開発された自動出品ツールです。あらかじめヤフオクで作成しておいた「下書き」を基に、商品情報を設定し、ボタン一つで自動的にヤフオクへ出品することができます。繰り返し行う出品作業の手間を減らし、時間を節約することを目的としています。
+                </p>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-3">1.2. 主な機能</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-start">
+                        <div class="feature-icon">
+                            <i class="fas fa-edit text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">下書き設定</h4>
+                            <p class="text-gray-600">ヤフオクに出品下書きを準備します。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="feature-icon">
+                            <i class="fas fa-sliders-h text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">かんたん設定</h4>
+                            <p class="text-gray-600">カテゴリ、画像、商品状態、配送方法などを画面上で選びながら設定できます。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync-alt text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">下書き上書き</h4>
+                            <p class="text-gray-600">ツールで設定した内容で、ヤフオクの下書き情報を更新します。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">自動出品</h4>
+                            <p class="text-gray-600">設定が終わったら、ボタン一つでヤフオクへの出品処理を自動で行います。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">利用認証</h4>
+                            <p class="text-gray-600">Discordアカウントを使って、ツールを利用できるユーザーかを確認します。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="feature-icon">
+                            <i class="fas fa-clipboard-list text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">ログ確認</h4>
+                            <p class="text-gray-600">ツールの動作状況を画面で確認でき、記録（ログ）として保存もされます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-red-50 important-notice rounded mb-6">
+                <h3 class="text-xl font-semibold mb-3 text-red-700">1.3. 最初に必ず確認してください（重要！）</h3>
+                <div class="mb-4">
+                    <h4 class="font-medium text-red-700">ツールの置き場所:</h4>
+                    <ul class="list-disc list-inside ml-4 text-gray-800">
+                        <li class="mb-2">オークラック（.exeファイル）は、<strong>OneDriveのようなクラウド同期フォルダや、特別な権限が必要なフォルダ（例: <code>C:\Program Files</code>, <code>C:\Windows</code> など）、またはデスクトップには置かないでください。</strong> 予期せぬエラーや動作不良の原因となります。</li>
+                        <li class="mb-2"><code>C:\</code> ドライブ直下や、ご自身で作成した <code>D:\Tools</code> のような簡単なパスのフォルダに置くようにしてください。</li>
+                        <li class="mb-2">ツールは、実行ファイル（.exe）のみで、その他のファイルやフォルダは実行時に自動生成されます。</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium text-red-700">下書きの準備:</h4>
+                    <p class="ml-4 text-gray-800">このツールは、必ず事前にヤフオクで「下書き」を作成しておく必要があります。下書きがないと利用できません。（詳しくは「3. 準備」を参照）</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 必要なものと前提条件 -->
+        <section id="requirements" class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">2. 必要なものと前提条件</h2>
+            
+            <div class="mb-6">
+                <p class="mb-4">オークラックを使うには、以下のものが必要です。</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="p-4 bg-blue-50 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-laptop text-blue-500 mr-3 text-xl"></i>
+                            <h3 class="text-lg font-semibold">パソコン</h3>
+                        </div>
+                        <p>Windows OS が動作するもの</p>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fab fa-chrome text-blue-500 mr-3 text-xl"></i>
+                            <h3 class="text-lg font-semibold">Webブラウザ</h3>
+                        </div>
+                        <p>Google Chrome (最新版推奨)</p>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-user text-blue-500 mr-3 text-xl"></i>
+                            <h3 class="text-lg font-semibold">ヤフオクアカウント</h3>
+                        </div>
+                        <p>出品が可能なアカウント</p>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fab fa-discord text-blue-500 mr-3 text-xl"></i>
+                            <h3 class="text-lg font-semibold">Discordアカウント</h3>
+                        </div>
+                        <p>ツールを使うための認証に必要です</p>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-wifi text-blue-500 mr-3 text-xl"></i>
+                            <h3 class="text-lg font-semibold">インターネット接続</h3>
+                        </div>
+                        <p>安定してインターネットに繋がる環境</p>
+                    </div>
+                    <div class="p-4 bg-green-100 rounded-lg border-2 border-green-500">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-crown text-green-600 mr-3 text-xl"></i>
+                            <h3 class="text-lg font-semibold text-green-700">LYPプレミアム</h3>
+                        </div>
+                        <p class="text-green-800">LYPプレミアムに加入していることが必須条件です</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 準備セクション -->
+        <section id="preparation" class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">3. 準備：ツールを使う前に</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">ステップ1: ツールの入手と配置</h3>
+                <div class="step-card p-4 bg-gray-50 rounded-lg mb-4">
+                    <ol class="list-decimal list-inside ml-4">
+                        <li class="mb-2">提供されたオークラックの実行ファイル（.exeファイル）を受け取ります。</li>
+                        <li class="mb-2"><strong>重要:</strong> この実行ファイルを、<strong>OneDrive同期フォルダ、特殊権限フォルダ、デスクトップを避け</strong>、任意の分かりやすいフォルダ（例: <code>C:\AucRakku</code>, <code>D:\Tools\AucRakku</code> など）に置きます。</li>
+                        <li class="mb-2"><strong>ログについて:</strong> ツールを実行すると、実行ファイルと同じ場所に <code>logs</code> というフォルダが自動で作られ、そこに動作記録が保存されます。</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">ステップ2: ヤフオクで下書きを準備する（必須）</h3>
+                <div class="tip-box p-4 rounded-lg mb-6">
+                    <p class="font-bold text-amber-700 mb-2">このツールを使う上で最も重要な準備です。</p>
+                    <p>下記の手順で、出品したい商品の下書きをヤフオクで作成してください。各下書きはツールから自動的に上書き変更されますので、ここでの入力内容は仮のもので構いません。</p>
+                </div>
+                
+                <div class="step-card p-4 bg-gray-50 rounded-lg mb-4">
+                    <ol class="list-decimal list-inside ml-0">
+                        <li class="mb-4">
+                            <strong>ヤフオクにログイン:</strong> ご自身のヤフオクアカウントでログインします。
+                        </li>
+                        <li class="mb-4">
+                            <strong>出品ページへ:</strong> 「出品」メニューから出品ページを開きます。
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/image.png" alt="出品メニュー" class="my-3">
+                            </div>
+                        </li>
+                        <li class="mb-4">
+                            <strong>最低限の情報を入力:</strong>
+                            <div class="ml-4 mt-2">
+                                <p class="font-medium mb-2">商品名:</p>
+                                <p class="mb-2">商品のタイトルを入力します。（後でツールから変更もできますが、どの下書きか区別するために仮のタイトルでも入れておくことをお勧めします）</p>
+                                <div class="image-container">
+                                    <img src="https://ogikosan.github.io/aucrakku/image%201.png" alt="商品名入力" class="my-3">
+                                </div>
+                            </div>
+                            
+                            <div class="ml-4 mt-4">
+                                <p class="font-medium mb-2">商品説明:</p>
+                                <p class="mb-2">簡単な説明文を入力します。</p>
+                                <div class="image-container">
+                                    <img src="https://ogikosan.github.io/aucrakku/image%202.png" alt="商品説明入力" class="my-3">
+                                </div>
+                            </div>
+                            
+                            <div class="ml-4 mt-4">
+                                <p class="font-medium mb-2">発送元の地域:</p>
+                                <p class="mb-2">「発送元の地域」を入力します。</p>
+                                <div class="image-container">
+                                    <img src="https://ogikosan.github.io/aucrakku/image%203.png" alt="発送元の地域" class="my-3">
+                                </div>
+                            </div>
+                            
+                            <div class="ml-4 mt-4">
+                                <p class="font-medium mb-2">送料負担:</p>
+                                <p class="mb-2">「送料負担」を選びます。</p>
+                                <div class="image-container">
+                                    <img src="https://ogikosan.github.io/aucrakku/image%204.png" alt="送料負担" class="my-3">
+                                </div>
+                            </div>
+                            
+                            <div class="ml-4 mt-4">
+                                <p class="font-medium mb-2">配送方法:</p>
+                                <p class="mb-2">「配送方法」を選びます。ゆうパケットポストがおススメです。</p>
+                                <div class="image-container">
+                                    <img src="https://ogikosan.github.io/aucrakku/image%205.png" alt="配送方法" class="my-3">
+                                </div>
+                            </div>
+                            
+                            <div class="ml-4 mt-4">
+                                <p class="font-medium mb-2">支払いから発送までの日数:</p>
+                                <p class="mb-2">落札者の支払いから発送までの日数を選択します。</p>
+                                <div class="image-container">
+                                    <img src="https://ogikosan.github.io/aucrakku/image%206.png" alt="支払いから発送までの日数" class="my-3">
+                                </div>
+                            </div>
+                            
+                            <div class="ml-4 mt-4">
+                                <p class="font-medium mb-2">販売形式:</p>
+                                <p class="mb-2">「オークション形式」を選びます。</p>
+                                <div class="image-container">
+                                    <img src="https://ogikosan.github.io/aucrakku/image%207.png" alt="販売形式" class="my-3">
+                                </div>
+                            </div>
+                            
+                            <div class="ml-4 mt-4">
+                                <p class="font-medium mb-2">販売価格と終了価格:</p>
+                                <p class="mb-2">「開始価格」と「即決価格」を入力します。(即決は任意)</p>
+                                <div class="image-container">
+                                    <img src="https://ogikosan.github.io/aucrakku/image%208.png" alt="販売価格と終了価格" class="my-3">
+                                </div>
+                            </div>
+                            
+                            <div class="ml-4 mt-4">
+                                <p class="font-medium mb-2">終了する日時:</p>
+                                <p class="mb-2">「オークションが終了する日付と時刻」を入力します。</p>
+                                <div class="image-container">
+                                    <img src="https://ogikosan.github.io/aucrakku/image%209.png" alt="終了する日時" class="my-3">
+                                </div>
+                            </div>
+                            
+                            <div class="ml-4 mt-4">
+                                <p class="font-medium mb-2">自動再出品:</p>
+                                <p class="mb-2">「自動再出品回数」を指定します。(任意)</p>
+                                <div class="image-container">
+                                    <img src="https://ogikosan.github.io/aucrakku/image%2010.png" alt="自動再出品" class="my-3">
+                                </div>
+                            </div>
+                            
+                            <div class="ml-4 mt-4">
+                                <p class="font-medium mb-2">おすすめコレクション:</p>
+                                <p class="mb-2">「おすすめコレクション」を1.0～99.9で入力します。</p>
+                                <div class="image-container">
+                                    <img src="https://ogikosan.github.io/aucrakku/image%2011.png" alt="おすすめコレクション" class="my-3">
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="mb-4">
+                            <strong>下書きとして保存:</strong> ページの下の方にある「下書きに保存する」ボタンをクリックします。
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/image%2012.png" alt="下書きに保存する" class="my-3">
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- ツールの使い方セクション -->
+        <section id="usage" class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">4. ツールの使い方：出品してみよう</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">ステップ1: 起動</h3>
+                <div class="step-card p-4 bg-gray-50 rounded-lg mb-4">
+                    <p class="mb-3">ツールを配置したフォルダを開き、オークラックの実行ファイル（<code>オークラック.exe</code>）をダブルクリックして起動します。</p>
+                    <div class="image-container">
+                        <img src="https://ogikosan.github.io/aucrakku/image%2013.png" alt="実行ファイル" class="my-3">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">ステップ2: ログイン認証（初回など）</h3>
+                <div class="step-card p-4 bg-gray-50 rounded-lg mb-4">
+                    <ol class="list-decimal list-inside ml-4">
+                        <li class="mb-4">
+                            初めてツールを使う時や、前回の認証から一定期間（通常60日）が経っている場合、Discordでの認証画面が表示されます。<br>
+                            <span class="text-gray-600">※Discordサーバの状態により60日経過していなくてもDiscordログインを求められる場合があります。</span>
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/Lbui4Ex5ze.png" alt="Discord認証画面" class="my-3">
+                            </div>
+                        </li>
+                        
+                        <li class="mb-4">
+                            「Discordで認証」ボタンをクリックします。
+                        </li>
+                        
+                        <li class="mb-4">
+                            Webブラウザが自動で開き、Discordの認証ページが表示されます。画面の指示に従って、オークラックとの連携を「承認」してください。
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/image%2014.png" alt="Discord認証ページ" class="my-3">
+                            </div>
+                        </li>
+                        
+                        <li class="mb-4">
+                            認証に成功すると、ブラウザに成功メッセージが表示され、ツールが使えるようになります。
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/image%2015.png" alt="認証成功" class="my-3">
+                            </div>
+                        </li>
+                        
+                        <li class="mb-4">
+                            認証情報は暗号化されてパソコンに保存されるため、次回からは有効期限内であればこの認証画面は表示されず、すぐにメイン画面が開きます。
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">ステップ3: メイン画面での操作</h3>
+                <p class="mb-3">ログイン認証が終わると、メイン画面が表示されます。ここから出品設定を行います。</p>
+                
+                <div class="image-container">
+                    <img src="https://ogikosan.github.io/aucrakku/001_%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF_20250504_152102.png" alt="メイン画面" class="my-4">
+                </div>
+                
+                <div class="step-card p-4 bg-gray-50 rounded-lg mb-4">
+                    <ol class="list-decimal list-inside ml-0">
+                        <li class="mb-6">
+                            <strong>商品名:</strong>
+                            <p class="ml-4 mt-2">商品名は「ファイル名」がそのまま使用されます。「リネラック」であらかじめファイル名を商品名に設定しておきましょう。</p>
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/image%2016.png" alt="商品名設定" class="my-3">
+                            </div>
+                        </li>
+                        
+                        <li class="mb-6">
+                            <strong>管理名を登録する:</strong>
+                            <p class="ml-4 mt-2">「新規作成」をクリックして管理名を登録します。</p>
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/image%2017.png" alt="管理名登録" class="my-3">
+                            </div>
+                            <p class="ml-4 mt-2">「管理名」と「アカウントID」を入力して登録します。</p>
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/5hzfHItbzu.png" alt="管理名入力" class="my-3">
+                            </div>
+                        </li>
+                        
+                        <li class="mb-6">
+                            <strong>下書きの上書き設定を確認する:</strong>
+                            <p class="ml-4 mt-2">「ヤフオクの下書きを上書きする項目」にチェックを入れます。</p>
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/i91cKcRDR2.png" alt="上書き設定" class="my-3">
+                            </div>
+                        </li>
+                        
+                        <li class="mb-6">
+                            <strong>カテゴリを選ぶ:</strong>
+                            <p class="ml-4 mt-2">「カテゴリ」を選択します。</p>
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/DZ7DC84SpS.png" alt="カテゴリ選択" class="my-3">
+                            </div>
+                        </li>
+                        
+                        <li class="mb-6">
+                            <strong>他の項目を入力します:</strong>
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/gkjEufQO5J.png" alt="その他項目入力" class="my-3">
+                            </div>
+                        </li>
+                        
+                        <li class="mb-6">
+                            <strong>保存する:</strong>
+                            <p class="ml-4 mt-2">「保存」をクリックしこれらの設定を保存します。</p>
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/UbMWm7aT3M.png" alt="保存" class="my-3">
+                            </div>
+                        </li>
+                        
+                        <li class="mb-6">
+                            <strong>出品を開始する:</strong>
+                            <p class="ml-4 mt-2">すべての設定が終わったら、「出品開始」ボタンをクリックします。</p>
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/image%2018.png" alt="出品開始" class="my-3">
+                            </div>
+                            <p class="ml-4 mt-2">クリック後、ツールが自動でChromeブラウザを操作し、設定した内容でヤフオクへの出品処理を行います。</p>
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/image%2019.png" alt="自動出品中" class="my-3">
+                            </div>
+                            <p class="ml-4 mt-2 text-red-600 font-medium">注意: 自動実行中は、予期せぬエラーを防ぐため、なるべくパソコンの操作（特にマウスやキーボードの入力）は行わないでください。</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- トラブルシューティングセクション -->
+        <section id="troubleshooting" class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">5. 困ったときは (トラブルシューティング)</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">5.1. ログファイルを確認する</h3>
+                <p class="mb-3">ツールの動作記録やエラーの詳しい情報は、ログファイルに残っています。</p>
+                
+                <div class="step-card p-4 bg-gray-50 rounded-lg mb-4">
+                    <ol class="list-decimal list-inside ml-4">
+                        <li class="mb-4">
+                            メイン画面に「ログフォルダを開く」ボタンがあればクリックします。
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/image%2020.png" alt="ログフォルダを開く" class="my-3">
+                            </div>
+                        </li>
+                        
+                        <li class="mb-4">
+                            中に <code>app_YYYYMMDD.log</code> のような日付ごとのログファイルがあります。問題が起きた日時付近のログファイルを開くと、原因究明の手がかりになることがあります。
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/aucrakku/image%2021.png" alt="ログファイル" class="my-3">
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">5.2. よくある問題と対処法</h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="border-b-2 p-3 text-left">問題</th>
+                                <th class="border-b-2 p-3 text-left">考えられる原因</th>
+                                <th class="border-b-2 p-3 text-left">対処法</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border-b p-3 font-medium">ツールを置いた場所が悪い (起動しない/不安定)</td>
+                                <td class="border-b p-3">OneDrive同期フォルダ、特殊権限フォルダ、デスクトップに置いている</td>
+                                <td class="border-b p-3">ツール一式を <code>C:\</code> ドライブ直下や <code>D:\Tools</code> など、単純なパスのフォルダに移動する</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b p-3 font-medium">Discord認証画面が出ない/認証に失敗する</td>
+                                <td class="border-b p-3">ネット接続が悪い、Discord側の問題、保存された認証情報が無効になった</td>
+                                <td class="border-b p-3">ネット接続を確認、少し待ってから再試行、<code>config</code>フォルダ内の認証情報ファイル（例: <code>auth_token.json</code>）を削除してツールを再起動</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b p-3 font-medium">下書き一覧が読み込めない/表示されない</td>
+                                <td class="border-b p-3">ヤフオクにうまくログインできていない、ネット接続が悪い、ヤフオクの仕様が変わった</td>
+                                <td class="border-b p-3">ネット接続を確認、ツールを再起動、ヤフオクにブラウザから手動でログインできるか確認、ツールのアップデートがないか確認</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b p-3 font-medium">カテゴリの選択肢が表示されない/選択できない</td>
+                                <td class="border-b p-3">ネット接続が悪い、ヤフオクの仕様が変わった、ツールの不具合</td>
+                                <td class="border-b p-3">ネット接続を確認、ツールを再起動、少し待ってから再試行、開発者に連絡</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b p-3 font-medium">画像がアップロードされない</td>
+                                <td class="border-b p-3">画像形式/サイズ/枚数制限違反、ネット接続が悪い、ヤフオク側の問題</td>
+                                <td class="border-b p-3">画像形式(JPEG)・サイズ・枚数(10枚まで)を確認、ネット接続を確認、少し待ってから再試行</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b p-3 font-medium">「出品実行」後にエラーで止まる</td>
+                                <td class="border-b p-3">設定項目の入力漏れ/間違い、ヤフオクの仕様が変わった、ネット接続が悪い</td>
+                                <td class="border-b p-3">ログでエラー内容を確認、設定項目を見直す、ネット接続を確認、ツールを再起動、開発者に連絡</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b p-3 font-medium">ログフォルダが見つからない/開けない</td>
+                                <td class="border-b p-3">ツールを置いた場所の問題</td>
+                                <td class="border-b p-3">ツール本体（.exeファイル）と同じ場所に<code>logs</code>フォルダが自動生成されます。エクスプローラーで直接その場所を確認してください。</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b p-3 font-medium">自動操作中に変な動きをする</td>
+                                <td class="border-b p-3">パソコンの性能不足、他のソフトとの干渉、実行中に手動で操作してしまった</td>
+                                <td class="border-b p-3">不要なソフトを閉じる、実行中はパソコン操作を控える、パソコンを再起動してみる</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <h3 class="text-xl font-semibold mb-3">5.3. 問題が解決しない場合</h3>
+                
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <p class="mb-3">上記の方法を試しても問題が解決しない場合は、以下の情報をできるだけ詳しく添えて、ツールの開発者に連絡してください。</p>
+                    
+                    <ul class="list-disc list-inside ml-4">
+                        <li class="mb-2"><strong>どんな問題が起きているか:</strong> 具体的に、何がどのように困っているか説明してください。</li>
+                        <li class="mb-2"><strong>問題が起きるまでの手順:</strong> どのような操作をしたら問題が発生したか、順番に教えてください。</li>
+                        <li class="mb-2"><strong>エラーメッセージ:</strong> もしエラーメッセージが表示されていたら、その全文を正確に教えてください。</li>
+                        <li class="mb-2"><strong>ログファイル:</strong> <code>logs</code> フォルダの中にある、問題が発生した時間帯のログファイルを添付してください。</li>
+                        <li class="mb-2"><strong>ツールのバージョン:</strong> 使っているオークラックのバージョン情報。</li>
+                        <li class="mb-2"><strong>お使いの環境:</strong> OS（Windows 10, 11など）と Google Chrome のバージョン。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- フッター -->
+        <footer class="bg-gray-800 text-white p-6 rounded-lg shadow text-center">
+            <div class="mb-3">
+                <h3 class="text-xl font-bold">オークラック 公式操作ガイド</h3>
+                <p class="text-gray-300">Version 2025</p>
+            </div>
+            <div class="mb-3">
+                <p>画像の著作権: 株式会社ミラソラ</p>
+            </div>
+            <p class="text-sm text-gray-400">このマニュアルは「オークラック」の基本的な使い方を解説したものです。<br>実際の操作では画面の指示に従い、必要に応じて開発者からの最新情報も確認してください。</p>
+        </footer>
+    </div>
+</body>
+</html>
